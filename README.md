@@ -19,5 +19,14 @@ pipenv install Django
 django-admin startproject movie_db .
 ```
 
+# Django backend app 
+
+```
+python manage.py startapp backend 
+```
+
+## django app registry
+
+<project_name>/settings.py
 
 
