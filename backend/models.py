@@ -20,6 +20,10 @@ class Movie(models.Model):
     def __str__(self):
         return self.title
         
+    
+    @property
+    def genres_printable_list(self):
+        return list(self.genres.select_related())
 
 
 class Genre(models.Model):

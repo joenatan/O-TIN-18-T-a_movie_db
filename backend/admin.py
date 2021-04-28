@@ -8,8 +8,12 @@ from .models import Movie, Genre
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     search_fields = ['title', 'description']
-    list_display = ['__str__', 'fsk']
+    list_display = ['__str__', 'fsk', 'get_genres']
     list_filter = ['genres', 'fsk']
+
+    def get_genres(self, obj):
+        return obj.genres_printable_list
+    get_genres.short_description = 'Genres'
 
 
 @admin.register(Genre)
