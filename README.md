@@ -30,3 +30,8 @@ python manage.py startapp backend
 <project_name>/settings.py
 
 
+## create superuser
+
+```
+python manage.py createsuperuser
+```

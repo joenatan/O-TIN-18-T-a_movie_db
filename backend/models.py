@@ -2,6 +2,8 @@ from django.db import models
 
 # https://docs.djangoproject.com/en/3.2/topics/db/models/
 
+# bei jeder änderung muss makemigrations und migrate durchgeführt werden
+
 
 class Movie(models.Model):
     # sql -> varchar(256)
