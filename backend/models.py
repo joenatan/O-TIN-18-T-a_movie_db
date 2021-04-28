@@ -2,7 +2,7 @@ from django.db import models
 
 # https://docs.djangoproject.com/en/3.2/topics/db/models/
 
-# bei jeder änderung muss makemigrations und migrate durchgeführt werden
+# bei jeder änderung (model Attribute) muss makemigrations und migrate durchgeführt werden
 
 
 class Movie(models.Model):
@@ -17,5 +17,20 @@ class Movie(models.Model):
     genres = models.ManyToManyField('Genre', related_name='movies')
 
 
+    def __str__(self):
+        return self.title
+        
+
+
 class Genre(models.Model):
     name = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def count_movies(self):
+        """
+        Return count movies of current instance
+        """
+        return self.movies.select_related().count()
