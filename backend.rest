@@ -1,0 +1,38 @@
+GET http://127.0.0.1:8000/api/v1/movies/
+
+###
+
+GET http://127.0.0.1:8000/api/v1/movies/1/
+
+###
+
+POST http://127.0.0.1:8000/api/v1/movies/
+Content-Type: application/json
+
+{
+    "title": "Terminator 4",
+    "description": "",
+    "release_date": "1999-03-23",
+    "genres": [
+        1
+    ]
+}
+
+###
+
+PUT http://127.0.0.1:8000/api/v1/movies/4/
+Content-Type: application/json
+
+{
+    "title": "Terminator 4",
+    "description": "Test 77777",
+    "release_date": "1999-03-23",
+    "genres": [
+        1
+    ]
+}
+
+
+###
+DELETE http://127.0.0.1:8000/api/v1/movies/4/
+
