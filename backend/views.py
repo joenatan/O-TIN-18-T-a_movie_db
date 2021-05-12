@@ -1,6 +1,7 @@
 from django.utils.decorators import method_decorator
 from rest_framework import viewsets
 from rest_framework.filters import SearchFilter, OrderingFilter
+from rest_framework.permissions import IsAuthenticated
 
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_yasg.utils import swagger_auto_schema
@@ -49,3 +50,6 @@ class GenreApiViewSet(viewsets.ModelViewSet):
 
     # disable pagination
     pagination_class = None
+
+    # override default permissions
+    permission_classes = [IsAuthenticated]
