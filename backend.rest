@@ -37,6 +37,13 @@ Content-Type: application/json
 DELETE http://127.0.0.1:8000/api/v1/movies/4/
 
 
-###
+### Filtering
 GET http://127.0.0.1:8000/api/v1/movies/?genres=2
+
+
+### Searching
+GET http://127.0.0.1:8000/api/v1/movies/?search=fgd
+
+### Filtering & Searching
+GET http://127.0.0.1:8000/api/v1/movies/?genres=1&search=term
 
