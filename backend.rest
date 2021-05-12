@@ -36,3 +36,7 @@ Content-Type: application/json
 ###
 DELETE http://127.0.0.1:8000/api/v1/movies/4/
 
+
+###
+GET http://127.0.0.1:8000/api/v1/movies/?genres=2
+
