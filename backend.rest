@@ -44,9 +44,14 @@ GET http://127.0.0.1:8000/api/v1/movies/?genres=2
 ### Searching
 GET http://127.0.0.1:8000/api/v1/movies/?search=fgd
 
+
 ### Filtering & Searching
 GET http://127.0.0.1:8000/api/v1/movies/?genres=1&search=term
+
 
 ### Ordering ASC / DESC with -
 GET http://127.0.0.1:8000/api/v1/movies/?ordering=duration
 
+
+### Pagination
+GET http://127.0.0.1:8000/api/v1/movies/?page=1
