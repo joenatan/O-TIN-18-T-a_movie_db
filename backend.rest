@@ -58,5 +58,10 @@ GET http://127.0.0.1:8000/api/v1/movies/?page=1
 
 
 ### BasicAuth
-GET http://127.0.0.1:8000/api/v1/genres/
+GET http://127.0.0.1:8000/api/v1/genres/1/
 Authorization: Basic admin Test1234$
+
+
+### TokenAuth
+GET http://127.0.0.1:8000/api/v1/genres/
+Authorization: Token afd88ee64297b4749d058214fe4c20f615031715
