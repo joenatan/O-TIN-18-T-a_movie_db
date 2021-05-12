@@ -25,3 +25,6 @@ class MovieApiViewSet(viewsets.ModelViewSet):
 class GenreApiViewSet(viewsets.ModelViewSet):
     serializer_class = GenreSerializer
     queryset = Genre.objects.all()
+
+    # disable pagination
+    pagination_class = None
