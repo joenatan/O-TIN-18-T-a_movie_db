@@ -65,3 +65,26 @@ Authorization: Basic admin Test1234$
 ### TokenAuth
 GET http://127.0.0.1:8000/api/v1/genres/
 Authorization: Token afd88ee64297b4749d058214fe4c20f615031715
+
+
+### Get JWT access token
+POST http://127.0.0.1:8000/api/v1/token/
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "Test1234$"
+}
+
+
+### JWTAuth access token (5 minutes)
+GET http://127.0.0.1:8000/api/v1/genres/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIwODMwMTUwLCJqdGkiOiJkMjI0MjE0MDAyOGY0NTFlYTliZWIyMDk4NmQyMzU2ZiIsInVzZXJfaWQiOjF9.Ggw-IPZqfdVorPSBbTMysZtXMUixrGt3jpQvvinKOCw
+
+### JWT Refresh token
+POST http://127.0.0.1:8000/api/v1/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTYyMDkxNTg2MiwianRpIjoiMGE1ODYyMDI3MWE5NGI2NzlkYTU4OTgyNDc4NzQ3MGEiLCJ1c2VyX2lkIjoxfQ.-_9DTsqJ_yzF0IqObzgwcTNEY8Mqx4fVwmuoOI-deSI"    
+}
