@@ -3,6 +3,10 @@ version: "3.8"
 services:
     app:
         build: .
+        env_file: 
+            - .env
+        environment: 
+            - DEBUG=True
         depends_on: 
             - db
         volumes: 
@@ -14,9 +18,9 @@ services:
     db:
         image: mariadb:10.5
         environment: 
-            - MARIADB_ROOT_PASSWORD=larslguzt4lgiurlgu4lbviuhl4hliuh3liuhvliu34vhl3iugv3i4
-            - MARIADB_DATABASE=movie_db
-            - MARIADB_USER=movie_db
-            - MARIADB_PASSWORD=el3ktwh34lghl34gh34luh34liuh34
+            - MARIADB_ROOT_PASSWORD=${MARIADB_ROOT_PASSWORD}
+            - MARIADB_DATABASE=${DJANGO_DB_NAME}
+            - MARIADB_USER=${DJANGO_DB_USER}
+            - MARIADB_PASSWORD=${DJANGO_DB_PASSWORD}
         volumes: 
             - ./data/db:/var/lib/mysql

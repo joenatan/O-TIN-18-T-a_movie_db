@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 from datetime import timedelta
 
@@ -21,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j&9kr4hpo2rm104_%lpv08w1!-qq()i*^^ckjg(%qhm35s(zz0'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', default='secret_key_1234')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,11 +85,11 @@ WSGI_APPLICATION = 'movie_db.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movie_db',
-        'USER': 'movie_db',
-        'PASSWORD': 'el3ktwh34lghl34gh34luh34liuh34',
-        'HOST': 'db',
-        'PORT': '3306',
+        'NAME': os.getenv('DJANGO_DB_NAME', default='mariadb'),
+        'USER': os.getenv('DJANGO_DB_USER', default='mariadb'),
+        'PASSWORD': os.getenv('DJANGO_DB_PASSWORD', default='my_secret'),
+        'HOST': os.getenv('DJANGO_DB_HOST', default='localhost'),
+        'PORT': os.getenv('DJANGO_DB_PORT', default='3306'),
     }
 }
 
