@@ -83,10 +83,15 @@ WSGI_APPLICATION = 'movie_db.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'movie_db',
+        'USER': 'movie_db',
+        'PASSWORD': 'el3ktwh34lghl34gh34luh34liuh34',
+        'HOST': 'db',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation

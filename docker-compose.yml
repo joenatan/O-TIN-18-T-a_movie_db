@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+    app:
+        build: .
+        depends_on: 
+            - db
+        volumes: 
+            - .:/app/
+        ports:
+            - 8000:8000
+        command: python /app/manage.py runserver 0.0.0.0:8000
+
+    db:
+        image: mariadb:10.5
+        environment: 
+            - MARIADB_ROOT_PASSWORD=larslguzt4lgiurlgu4lbviuhl4hliuh3liuhvliu34vhl3iugv3i4
+            - MARIADB_DATABASE=movie_db
+            - MARIADB_USER=movie_db
+            - MARIADB_PASSWORD=el3ktwh34lghl34gh34luh34liuh34
+        volumes: 
+            - ./data/db:/var/lib/mysql
